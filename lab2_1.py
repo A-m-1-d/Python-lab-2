@@ -1,18 +1,13 @@
-# lab2_task1.py
-# Программа читает числа из файла data.txt, вычисляет сумму, среднее, максимум и минимум,
-# а затем записывает результаты в файл result.txt.
-
 def main():
     try:
         # Открываем файл data.txt для чтения
         with open('data.txt', 'r', encoding='utf-8') as file:
             numbers = []
-            # Читаем файл построчно
             for line in file:
                 line = line.strip()  # Удаляем лишние пробелы и символы переноса строки
-                if line:  # Если строка не пустая
+                if line:
                     try:
-                        num = float(line)  # Преобразуем строку в число
+                        num = float(line)
                         numbers.append(num)
                     except ValueError:
                         print(f"Не удалось преобразовать строку '{line}' в число.")
